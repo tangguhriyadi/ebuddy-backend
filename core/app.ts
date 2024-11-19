@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 4000;
 
 // middlewares
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: true }));
 
 app.use("/", UserRouter);
 
@@ -15,3 +15,5 @@ app.use("/", UserRouter);
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`);
 });
+
+export default app;
